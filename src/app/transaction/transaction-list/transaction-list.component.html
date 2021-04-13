@@ -1,0 +1,29 @@
+<mat-table [dataSource]="data$ | async">
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Payment-ID</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="place">
+    <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <cofund-place-address [place]="row.place"></cofund-place-address>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.amount}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.status}} </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row class="table-row" *matRowDef="let row; columns: columns"></mat-row>
+</mat-table>
+

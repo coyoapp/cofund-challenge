@@ -1,0 +1,74 @@
+<mat-table [dataSource]="data$ | async">
+
+  <!-- Status Indicator -->
+  <ng-container matColumnDef="status-color">
+    <mat-header-cell class="status-color-cell" *matHeaderCellDef></mat-header-cell>
+    <mat-cell class="status-color-cell" *matCellDef="let row">
+      <cofund-status-indicator [status]="row.status.toLowerCase()" *ngIf="row.status"></cofund-status-indicator>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Company Definition -->
+  <ng-container matColumnDef="company">
+    <mat-header-cell *matHeaderCellDef>Name</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <strong>{{row.company}}</strong><br>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Address Definition -->
+  <ng-container matColumnDef="address">
+    <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+
+      <a mat-icon-button [attr.href]="row | placeLink" target="_blank">
+        <mat-icon class="place-link">place</mat-icon>
+      </a>
+
+      {{row.address}}<br>
+      {{row.zip}} {{row.city}}<br>
+    </mat-cell>
+  </ng-container>
+
+  <!-- ID Definition -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>ID</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.id}}</mat-cell>
+  </ng-container>
+
+  <!-- Status Definition -->
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+
+    <mat-cell *matCellDef="let row">
+      <mat-select [(value)]="row.status" (selectionChange)="changeStatus($event, row)">
+        <mat-option value="NEW" disabled>
+          <cofund-status-indicator [status]="'new'" [text]="'New'"></cofund-status-indicator>
+        </mat-option>
+        <mat-option value="CONTACTED">
+          <cofund-status-indicator [status]="'contacted'" [text]="'Contacted'"></cofund-status-indicator>
+        </mat-option>
+        <mat-option value="ACTIVE" disabled>
+          <cofund-status-indicator [status]="'active'" [text]="'Active'"></cofund-status-indicator>
+        </mat-option>
+        <mat-option value="BLOCKED">
+          <cofund-status-indicator [status]="'blocked'" [text]="'Blocked'"></cofund-status-indicator>
+        </mat-option>
+      </mat-select>
+    </mat-cell>
+  </ng-container>
+
+  <!-- PDF -->
+  <ng-container matColumnDef="pdf">
+    <mat-header-cell *matHeaderCellDef>Invitation</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <a (click)="downloadPdf(row)" target="_blank" *ngIf="hasPdf(row.status)">
+        <button mat-stroked-button color="accent">show</button>
+      </a>
+    </mat-cell>
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row class="table-row" *matRowDef="let row; columns: columns"></mat-row>
+</mat-table>

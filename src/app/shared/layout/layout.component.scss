@@ -1,0 +1,14 @@
+@import '~@angular/material/theming';
+
+.mat-toolbar {
+  @include mat-elevation(6);
+  position: relative;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.name {
+  margin: 0 2em 0 0.75em;
+}

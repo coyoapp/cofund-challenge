@@ -1,0 +1,54 @@
+<mat-table [dataSource]="data$ | async">
+
+  <!-- Status Indicator -->
+  <ng-container matColumnDef="status-color">
+    <mat-header-cell class="status-color-cell" *matHeaderCellDef></mat-header-cell>
+    <mat-cell class="status-color-cell" *matCellDef="let row">
+      <cofund-status-indicator [status]="row.status.toLowerCase()" *ngIf="row.status"></cofund-status-indicator>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef>Payout-ID</mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{row.id}} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="place">
+    <mat-header-cell *matHeaderCellDef>Company</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <cofund-place-address [place]="row.place"></cofund-place-address>
+    </mat-cell>
+  </ng-container>
+
+
+  <ng-container matColumnDef="amount">
+    <mat-header-cell *matHeaderCellDef>Amount</mat-header-cell>
+    <mat-cell *matCellDef="let row">{{row.amount}}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="status">
+    <mat-header-cell *matHeaderCellDef>Status</mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-select [(value)]="row.status" (selectionChange)="changeStatus($event, row)">
+        <mat-option value="PENDING" disabled>
+          <cofund-status-indicator [status]="'pending'" [text]="'Pending'"></cofund-status-indicator>
+        </mat-option>
+        <mat-option value="ACCEPTED">
+          <cofund-status-indicator [status]="'accepted'" [text]="'Accepted'"></cofund-status-indicator>
+        </mat-option>
+        <mat-option value="PAID" disabled>
+          <cofund-status-indicator [status]="'paid'" [text]="'Paid'"></cofund-status-indicator>
+        </mat-option>
+        <mat-option value="DECLINED">
+          <cofund-status-indicator [status]="'declined'" [text]="'Declined'"></cofund-status-indicator>
+        </mat-option>
+      </mat-select>
+    </mat-cell>
+
+  </ng-container>
+
+  <!-- Header and Row Declarations -->
+  <mat-header-row *matHeaderRowDef="columns"></mat-header-row>
+  <mat-row class="table-row" *matRowDef="let row; columns: columns"></mat-row>
+</mat-table>
+

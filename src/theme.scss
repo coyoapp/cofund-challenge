@@ -1,0 +1,95 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/theming';
+
+$font-family: 'Montserrat', 'Helvetica Neue', sans-serif;
+
+$typography-configuration: mat-typography-config(
+  $font-family: 'Montserrat, "Helvetica Neue", sans-serif',
+  $display-4:     mat-typography-level(112px, 112px, 300),
+  $display-3:     mat-typography-level(56px, 56px, 400),
+  $display-2:     mat-typography-level(45px, 48px, 400),
+  $display-1:     mat-typography-level(34px, 40px, 400),
+  $headline:      mat-typography-level(24px, 32px, 400),
+  $title:         mat-typography-level(20px, 32px, 500),
+  $subheading-2:  mat-typography-level(16px, 28px, 400),
+  $subheading-1:  mat-typography-level(15px, 24px, 400),
+  $body-2:        mat-typography-level(14px, 24px, 500),
+  $body-1:        mat-typography-level(14px, 20px, 400),
+  $caption:       mat-typography-level(12px, 20px, 400),
+  $button:        mat-typography-level(14px, 14px, 500),
+  $input:         mat-typography-level(inherit, 1.125, 400)
+);
+
+@include mat-core($typography-configuration);
+@include mat-base-typography($typography-configuration);
+@include mat-table-typography($typography-configuration);
+
+$purple-palette: (
+  50 : #e5e4e9,
+  100 : #bebcc8,
+  200 : #9390a4,
+  300 : #68647f,
+  400 : #474263,
+  500 : #272148,
+  600 : #231d41,
+  700 : #1d1838,
+  800 : #171430,
+  900 : #0e0b21,
+  A100 : #6b61ff,
+  A200 : #3b2eff,
+  A400 : #1000fa,
+  A700 : #0e00e0,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #ffffff,
+    400 : #ffffff,
+    500 : #ffffff,
+    600 : #ffffff,
+    700 : #ffffff,
+    800 : #ffffff,
+    900 : #ffffff,
+    A100 : #ffffff,
+    A200 : #ffffff,
+    A400 : #ffffff,
+    A700 : #ffffff,
+  )
+);
+
+$turquoise-palette: (
+  50 : #f1fcf7,
+  100 : #ddf7ec,
+  200 : #c7f2e0,
+  300 : #b0edd3,
+  400 : #9fe9c9,
+  500 : #8ee5c0,
+  600 : #86e2ba,
+  700 : #7bdeb2,
+  800 : #71daaa,
+  900 : #5fd39c,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #d8ffec,
+  A700 : #beffe0,
+  contrast: (
+    50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  )
+);
+
+$app-primary: mat-palette($purple-palette, 700, 500, 900);
+$app-accent: mat-palette($mat-deep-purple, 700, 500, 900);
+$app-theme: mat-light-theme($app-primary, $app-accent);

@@ -1,0 +1,13 @@
+<div class="statistic-container">
+  <div class="statistic-row">
+    <div class="statistic-entry" *ngIf="transactionsSum$">
+      {{ transactionsSum$ | async }}€
+    </div>
+    <div class="statistic-entry" *ngIf="transactionsCount$">
+      {{ transactionsCount$ | async }} Donations
+    </div>
+    <div class="statistic-entry" *ngIf="placeCount$">
+      {{ placeCount$ | async }} Companies
+    </div>
+  </div>
+</div>

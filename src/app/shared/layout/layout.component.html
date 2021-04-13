@@ -1,0 +1,16 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <img class="logo" src="assets/cofund.svg" alt="cofund logo">
+    <h1 class="name">
+      Cofund Challenge
+    </h1>
+    <a mat-button routerLink="/places" routerLinkActive="active">Companies</a>
+    <a mat-button routerLink="/transactions" routerLinkActive="active">Transactions</a>
+    <a mat-button routerLink="/payouts" routerLinkActive="active">Payouts</a>
+    <a mat-button routerLink="/statistics" routerLinkActive="active">Statistics</a>
+    <span class="spacer"></span>
+    <a mat-button (click)="logout()">Logout</a>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<router-outlet></router-outlet>

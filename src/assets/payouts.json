@@ -1,0 +1,67 @@
+[
+  {
+    "id": "payout-id-1",
+    "amount": 72,
+    "place": {
+      "id": "id-1",
+      "placeId": "ChIJm5CdxkKPsUcRZBswFrh-tMo",
+      "company": "Liebes Bisschen",
+      "address": "Spritzenplatz 5",
+      "zip": "22765",
+      "city": "Hamburg",
+      "country": "DE",
+      "created": "2021-04-23T18:25:43.511Z",
+      "status": "NEW"
+    },
+    "status": "ACCEPTED"
+  },
+  {
+    "id": "payout-id-2",
+    "amount": 36,
+    "place": {
+      "id": "id-2",
+      "placeId": "ChIJnVWGAWGPsUcRhzREnljxkdQ",
+      "company": "Aalhaus",
+      "address": "Eggerstedtstraße 39",
+      "zip": "22765",
+      "city": "Hamburg",
+      "country": "DE",
+      "created": "2021-04-24T18:25:43.511Z",
+      "status": "CONTACTED"
+    },
+    "status": "PENDING"
+  },
+  {
+    "id": "payout-id-3",
+    "amount": 35,
+    "place": {
+      "id": "id-4",
+      "placeId": "ChIJucp6YN2PsUcReHQbyymp6Mc",
+      "company": "Taugenichts Bar",
+      "address": "Holstenstraße 192",
+      "zip": "22765",
+      "city": "Hamburg",
+      "country": "DE",
+      "created": "2021-04-26T18:25:43.511Z",
+      "status": "BLOCKED"
+    },
+    "status": "DECLINED"
+  },
+  {
+    "id": "payout-id-4",
+    "amount": 36,
+    "place": {
+      "id": "id-3",
+      "placeId": "ChIJ1wZxurSFsUcRGTcfOS1bl3Y",
+      "company": "SAMI SAMI",
+      "address": "Ottenser Hauptstraße 34",
+      "zip": "22765",
+      "city": "Hamburg",
+      "country": "DE",
+      "created": "2021-04-25T18:25:43.511Z",
+      "status": "ACTIVE"
+    },
+    "status": "PAID"
+  }
+]
+

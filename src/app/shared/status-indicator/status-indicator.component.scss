@@ -1,0 +1,36 @@
+.status-container {
+  display: flex;
+  align-items: center;
+}
+
+.status-color {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  display: inline-block;
+
+  &.new,
+  &.pending {
+    border: 1px solid #ccc;
+    background-color: #fff;
+  }
+
+  &.contacted,
+  &.accepted {
+    background-color: #362F64;
+  }
+
+  &.active,
+  &.paid {
+    background-color: #8EE5C0;
+  }
+
+  &.blocked,
+  &.declined {
+    background-color: #D63541;
+  }
+}
+
+.text {
+  margin-left: 16px;
+}

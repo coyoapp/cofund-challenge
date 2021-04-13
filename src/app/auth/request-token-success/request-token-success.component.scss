@@ -1,0 +1,29 @@
+@import '../../../theme';
+
+:host {
+  background-color: mat-color($app-primary);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mat-card {
+  padding: 32px;
+}
+
+.mat-form-field {
+  display: block;
+}
+
+.mat-card-title {
+  text-align: center;
+}
+
+.logo {
+  margin: 8px;
+}
