@@ -1,7 +1,6 @@
-import { TokenPayload } from './../auth.service';
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService, TokenPayload } from '../auth.service';
 
 @Component({
   selector: 'cofund-login',
@@ -10,18 +9,15 @@ import { Router } from '@angular/router';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class LoginComponent implements OnInit {
+export class LoginComponent {
   credentials: TokenPayload = {
     token: ''
   };
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnInit(): void {
-  }
-
   login(): void {
-    this.authService.login(this.credentials).subscribe(() => this.router.navigateByUrl(this.authService.redirectUrl || '/places'));
+    this.authService.login(this.credentials).subscribe(() => this.router.navigateByUrl(this.authService.redirectUrl || '/home'));
   }
 
   go(url): Promise<boolean> {

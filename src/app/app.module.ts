@@ -11,11 +11,12 @@ import { TransactionModule } from './transaction/transaction.module';
 import { PlacesModule } from './places/places.module';
 import { AuthModule } from './auth/auth.module';
 import { StatisticComponent } from './statistic/statistic.component';
-import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     StatisticComponent
   ],
   imports: [
@@ -25,8 +26,8 @@ import { FormsModule } from '@angular/forms';
     MaterialModule,
     AuthModule,
     PlacesModule,
+    PayoutModule,
     TransactionModule,
-    PayoutModule
   ],
   providers: [
     {

@@ -9,6 +9,7 @@ import { PlacesListComponent } from './places/places-list/places-list.component'
 import { LoginComponent } from './auth/login/login.component';
 import { LayoutComponent } from './shared/layout/layout.component';
 import { AuthGuard } from './auth/auth.guard';
+import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [{
   path: 'login',
@@ -30,6 +31,7 @@ const routes: Routes = [{
     path: '',
     canActivateChild: [AuthGuard],
     children: [
+      { path: 'home', component: HomeComponent },
       { path: 'places', component: PlacesListComponent },
       { path: 'transactions', component: TransactionListComponent },
       { path: 'payouts', component: PayoutListComponent },

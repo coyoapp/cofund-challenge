@@ -1,4 +1,4 @@
-# Donation Code Challenge
+# Cofund Challenge
 
 Hey there! Welcome to the COYO frontend challenge. Don't be afraid, the main focus is not about failing or succeeding in the given tasks, but to have a chat about the code, style and architectural things of the project. So let's go.
 
@@ -32,8 +32,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## How to start
 
+- On the first start run `npm install`, on consecutive runs you can ignore this step. 
 - Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 - The app will automatically reload if you change any of the source files.
+- Remember you can input any token to login into the app.
 
 ## Tasks
 

@@ -1,8 +1,6 @@
 /* tslint:disable:no-unused-variable */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { By } from '@angular/platform-browser';
-import { DebugElement } from '@angular/core';
-
+import { RouterTestingModule } from '@angular/router/testing';
 import { RequestTokenSuccessComponent } from './request-token-success.component';
 
 describe('RegisterSuccessComponent', () => {
@@ -11,7 +9,10 @@ describe('RegisterSuccessComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RequestTokenSuccessComponent ]
+      declarations: [ RequestTokenSuccessComponent ],
+      imports: [
+        RouterTestingModule
+      ]
     })
     .compileComponents();
   }));
